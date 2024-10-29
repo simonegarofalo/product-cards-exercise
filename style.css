@@ -15,10 +15,18 @@
   overflow: hidden;
 }
 
+.location:hover {
+  cursor: pointer;
+}
+
 .image-placeholder {
   height: 300px;
   background-color: gainsboro;
   border-radius: 20px;
+}
+
+.image-placeholder:hover {
+  background-color: gray;
 }
 
 .location-title {
