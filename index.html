@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRID</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="location-container">
+      <div class="location">
+        <div class="image-placeholder"></div>
+        <h1 class="location-title">Questo è il titolo della scheda 1</h1>
+        <p class="location-description">
+          Questa è una scheda prodotto che ti permette di prenotare una stanza
+        </p>
+        <p id="location-status-1" class="bold"></p>
+      </div>
+
+      <div class="location">
+        <div class="image-placeholder"></div>
+        <h1 class="location-title">Questo è il titolo della scheda 2</h1>
+        <p class="location-description">
+          Questa è una scheda prodotto che ti permette di prenotare una stanza
+        </p>
+        <p id="location-status-2" class="bold"></p>
+      </div>
+
+      <div class="location">
+        <div class="image-placeholder"></div>
+        <h1 class="location-title">Questo è il titolo della scheda 3</h1>
+        <p class="location-description">
+          Questa è una scheda prodotto che ti permette di prenotare una stanza
+        </p>
+        <p id="location-status-3" class="bold"></p>
+      </div>
+
+      <div class="location">
+        <div class="image-placeholder"></div>
+        <h1 class="location-title">Questo è il titolo della scheda 4</h1>
+        <p class="location-description">
+          Questa è una scheda prodotto che ti permette di prenotare una stanza
+        </p>
+        <p id="location-status-4" class="bold"></p>
+      </div>
+    </div>
+    <script>
+      const stanze = [1, 0, 1, 0];
+      const warnings = [];
+
+      for (let i = 0; i < stanze.length; i++) {
+        if (stanze[i] < 1) {
+          warnings[i] = "Disponibile";
+        } else {
+          warnings[i] = "Non disponibile";
+        }
+        document.getElementById(`location-status-${i + 1}`).innerHTML =
+          warnings[i];
+      }
+    </script>
+  </body>
+</html>

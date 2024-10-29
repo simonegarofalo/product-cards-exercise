@@ -1,0 +1,50 @@
+* {
+  font-size: 15px;
+  font-family: Helvetica, sans-serif;
+}
+
+.location-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 0 5%;
+}
+
+.location {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.image-placeholder {
+  height: 300px;
+  background-color: gainsboro;
+  border-radius: 20px;
+}
+
+.location-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.location-description {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .location-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .location-container {
+    grid-template-columns: 1fr;
+  }
+}
