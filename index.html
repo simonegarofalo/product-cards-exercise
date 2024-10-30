@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="location-container">
+    <div id="all-locations" class="location-container">
       <div class="location">
         <div class="image-placeholder"></div>
         <h1 class="location-title">Questo è il titolo della scheda 1</h1>
         <p class="location-description">
           Questa è una scheda prodotto che ti permette di prenotare una stanza
         </p>
-        <p id="location-status-1" class="bold"></p>
+        <p class="bold location-status"></p>
       </div>
 
       <div class="location">
@@ -23,7 +23,7 @@
         <p class="location-description">
           Questa è una scheda prodotto che ti permette di prenotare una stanza
         </p>
-        <p id="location-status-2" class="bold"></p>
+        <p class="bold location-status"></p>
       </div>
 
       <div class="location">
@@ -32,7 +32,7 @@
         <p class="location-description">
           Questa è una scheda prodotto che ti permette di prenotare una stanza
         </p>
-        <p id="location-status-3" class="bold"></p>
+        <p class="bold location-status"></p>
       </div>
 
       <div class="location">
@@ -41,22 +41,22 @@
         <p class="location-description">
           Questa è una scheda prodotto che ti permette di prenotare una stanza
         </p>
-        <p id="location-status-4" class="bold"></p>
+        <p class="bold location-status"></p>
       </div>
     </div>
     <script>
-      const stanze = [1, 0, 1, 0];
+      const availabilities = [1, 0, 1, 0];
       const warnings = [];
+      const locations = document.getElementById("all-locations").children;
 
-      for (let i = 0; i < stanze.length; i++) {
-        if (stanze[i] < 1) {
-          warnings[i] = "Disponibile";
-        } else {
-          warnings[i] = "Non disponibile";
-        }
-        document.getElementById(`location-status-${i + 1}`).innerHTML =
-          warnings[i];
-      }
+      console.log(locations);
+
+      Array.from(locations).forEach((location, index) => {
+        const isAvailable = Boolean(availabilities[index]);
+        location.querySelector(".location-status").innerHTML = isAvailable
+          ? "Disponibile"
+          : "Non disponibile";
+      });
     </script>
   </body>
 </html>
